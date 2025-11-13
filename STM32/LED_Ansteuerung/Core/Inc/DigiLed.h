@@ -41,7 +41,7 @@ union
 {
 	struct
 	{					// LSB
-		uint8_t RED    : 8;	///< RED led intensity from 0 (off) to 255 (max)
+		uint8_t RED    : 8;		///< RED led intensity from 0 (off) to 255 (max)
 		uint8_t GREEN  : 8; 	///< GREEN led intensity from 0 (off) to 255 (max)
 		uint8_t BLUE   : 8; 	///< BLUE led intensity from 0 (off) to 255 (max)
 		uint8_t GLOBAL : 5; 	///< Global intensity for all LEDs from 0 (off) to 32 (max)

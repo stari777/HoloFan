@@ -32,6 +32,7 @@ if not ready:
     print("Keine Rückmeldung")
 else:
     print("Rückmeldung empfangen -> starte Dateiübertragung.")
+    time.sleep(0.1) # kurze Pause
     with open(FILE_PATH, "r") as f:
         for line in f:
             line = line.strip()
