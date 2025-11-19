@@ -8,7 +8,7 @@ PORT = "COM4"       # COM-Port, an dem der STM32 hängt
 BAUD = 115200       # Baudrate muss mit STM32 übereinstimmen
 FILE_PATH = "CoordToPolar"  # Vorbereitete Bilddatei
 TIMEOUT = 1         # Sekunden, wie lange readline auf Daten wartet
-MAX_WAIT = 30        # Sekunden, maximal auf READY warten
+MAX_WAIT = 60        # Sekunden, maximal auf READY warten
 # -----------------------------
 
 # Serial initialisieren

@@ -116,7 +116,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if(HAL_UART_Receive(&huart2, &rx_byte, 1, HAL_MAX_DELAY) == HAL_OK)
+
+	  if(HAL_UART_Receive(&huart2, &rx_byte, 1, 10) == HAL_OK)
 	  	  {
 	  		  //HAL_UART_Transmit(&huart2, &rx_byte, 1, HAL_MAX_DELAY); // Echo zum Test
 	  		  if (rx_byte == '\n' || rx_byte == '\r')
@@ -151,17 +152,18 @@ int main(void)
 	  						  count++;
 	  					  }
 
-	  					  if (count == MAX_VALUES)
-	  					  {
+	  					 //if (count == MAX_VALUES)
+	  					  //{
 	  						 for (int i = 0; i < MAX_VALUES; i++)
 	  						 {
 	  							DigiLed_setColor(i, rgb_arr[i][0], rgb_arr[i][1], rgb_arr[i][2]);
 
 	  						 }
+	  						 DigiLed_setAllIllumination(1);
 	  						 DigiLed_update(1);
 
 	  						 count = 0; // zuruecksetzen für den naechsten Frame
-	  					  }
+	  					  //}
 	  				  }
 	  			  }
 	  		  }
