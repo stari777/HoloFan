@@ -24,13 +24,13 @@ obj/
 *.tmp
 
 # --- STM32CubeIDE project metadata ---
-.settings/
-.metadata/
-.cproject
-.project
-.loadpath
-.launches/
-*.launch
+#.settings/
+#.metadata/
+#.cproject
+#.project
+#.loadpath
+#.launches/
+#*.launch
 
 # --- Eclipse / workspace metadata ---
 .externalToolBuilders/

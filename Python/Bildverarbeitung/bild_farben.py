@@ -4,7 +4,7 @@ import math
 
 size_xy = 30
 
-img = Image.open("rgb_image.png").convert("RGB") # Bild laden
+img = Image.open("snake2.png").convert("RGB") # Bild laden
 img = img.resize((size_xy, size_xy)) # Bild komprimieren auf LED-Matrix
 arr = np.array(img, dtype=np.uint8) # In Array umwandeln
 

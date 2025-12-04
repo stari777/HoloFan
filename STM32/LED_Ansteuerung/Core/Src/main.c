@@ -56,6 +56,19 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+uint8_t rx_byte;
+uint8_t rx_buf[256];
+volatile uint8_t new_line_received = 0;
+uint16_t idx = 0;
+
+#define MAX_VALUES 900
+#define FRAME_SIZE 30
+
+float rad_arr[MAX_VALUES];
+float phi_arr[MAX_VALUES];
+uint8_t rgb_arr[MAX_VALUES][3];
+
+int count = 0;
 
 /* USER CODE END 0 */
 
@@ -92,94 +105,96 @@ int main(void)
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
   DigiLed_init(&hspi1); // Initialisierung der Library
+  HAL_UART_Receive_IT(&huart2, &rx_byte, 1); // Interrupt start
 
-  uint8_t rx_byte;
-  uint8_t rx_buf[100];
-  uint8_t idx = 0;
   uint8_t ready_msg[] = "READY\r\n";
-  #define MAX_VALUES 30
+  HAL_Delay(10); // Kurz warten
+  HAL_UART_Transmit(&huart2, ready_msg, sizeof(ready_msg), 1000); // READY an Python Code senden
 
-  float rad_arr[MAX_VALUES];
-  float phi_arr[MAX_VALUES];
-  uint8_t rgb_arr[MAX_VALUES][3];
 
-  int count = 0;
-  char msg[100]; // für Ausgabe über UART
-
-  // Kurz warten
-  HAL_Delay(10);
-  // READY an Python Code senden
-  HAL_UART_Transmit(&huart2, ready_msg, sizeof(ready_msg), 1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  if(1)
+	  {
 
-	  if(HAL_UART_Receive(&huart2, &rx_byte, 1, 10) == HAL_OK)
-	  	  {
-	  		  //HAL_UART_Transmit(&huart2, &rx_byte, 1, HAL_MAX_DELAY); // Echo zum Test
-	  		  if (rx_byte == '\n' || rx_byte == '\r')
-	  		  {
-	  			  if(idx > 0)
-	  			  {
-	  				  rx_buf[idx] = 0; // Nullterminator, Stringende
-	  				  idx = 0;	// auf 0 setzen fuer naechste Nachricht
+		  new_line_received = 0;
+		  //HAL_UART_Transmit(&huart2, &rx_byte, 1, HAL_MAX_DELAY); // Echo zum Test
+	      float rad_i, phi_i;
+	      unsigned int r_tmp, g_tmp, b_tmp;
 
-	  				  float rad, phi;
-	  				  uint8_t r, g, b;
-	  				  unsigned int r_tmp, g_tmp, b_tmp;
-	  				  int n = sscanf((char*)rx_buf, "%f,%f,%u,%u,%u", &rad, &phi, &r_tmp, &g_tmp, &b_tmp);
+	      int n = sscanf((char*)rx_buf, "%f,%f,%u,%u,%u",
+	    		  &rad_i, &phi_i, &r_tmp, &g_tmp, &b_tmp);
+	      int offset;
+	      //float rad = rad_i / 100.0f;
+	      //float phi = phi_i / 100.0f;
+	      if (n == 5)
+	      {
+	    	  // Werte speichern
+	          rgb_arr[count][0] = (uint8_t)r_tmp;
+	          rgb_arr[count][1] = (uint8_t)g_tmp;
+	          rgb_arr[count++][2] = (uint8_t)b_tmp;
 
-	  				  if(n == 5)
-	  				  {	  // Casten auf uint8_t
-	  					  r = (uint8_t) r_tmp;
-	  					  g = (uint8_t) g_tmp;
-	  					  b = (uint8_t) b_tmp;
+	          if (count == MAX_VALUES)
+	          {
+	        	  int TOTAL_FRAMES = MAX_VALUES / FRAME_SIZE;
 
-	  					  //int n = sscanf((char*)rx_buf, "%f,%f,%hhu,%hhu,%hhu", &rad, &phi, &r, &g, &b);
-	  					  int len = sprintf(msg, "n=%d, rad=%.2f, phi=%.2f, RGB(%d,%d,%d)\r\n", n, rad, phi, r, g, b);
-	  					  HAL_UART_Transmit(&huart2, (uint8_t*)msg, len, 1000);
+				  for (int frame = 0; frame < TOTAL_FRAMES; frame++)
+				  {
+					  offset = frame * FRAME_SIZE;
 
-	  					  if (count < MAX_VALUES)
-	  					  {
-	  						  rad_arr[count] = rad;
-	  						  phi_arr[count] = phi;
-	  						  rgb_arr[count][0] = r;
-	  						  rgb_arr[count][1] = g;
-	  						  rgb_arr[count][2] = b;
-	  						  count++;
-	  					  }
+					  for (int i = 0; i < FRAME_SIZE; i++)
+					  {
+						  DigiLed_setColor(i,
+							   rgb_arr[offset + i][0],
+							   rgb_arr[offset + i][1],
+							   rgb_arr[offset + i][2]);
+					  }
 
-	  					 //if (count == MAX_VALUES)
-	  					  //{
-	  						 for (int i = 0; i < MAX_VALUES; i++)
-	  						 {
-	  							DigiLed_setColor(i, rgb_arr[i][0], rgb_arr[i][1], rgb_arr[i][2]);
-
-	  						 }
-	  						 DigiLed_setAllIllumination(1);
-	  						 DigiLed_update(1);
-
-	  						 count = 0; // zuruecksetzen für den naechsten Frame
-	  					  //}
-	  				  }
-	  			  }
-	  		  }
-	  		  else
-	  		  {	  // Ueberlauf verhindern
-	  			  if (idx < sizeof(rx_buf) - 1)	// Prueft noch Platz im Buffer
-	  				  rx_buf[idx++] = rx_byte;	// Byte uebergeben an Buffer, dann idx+1
-	  		  }
-	  	  }
+					  DigiLed_setAllIllumination(1);
+					  DigiLed_update(1);
+					  HAL_Delay(50);
+				  }
+					  offset = 0;
+			  }
+	      }
+	      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 1);
+	  }
+	  HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
+
   /* USER CODE END 3 */
 }
 
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if(huart->Instance == USART2)
+    {
+        if(rx_byte == '\n' || rx_byte == '\r')
+        {
+            rx_buf[idx] = 0;          // String beenden
+            HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 0);
+            new_line_received = 1;    // Hauptschleife informieren
+            idx = 0;                  // Reset für neue Zeile
+        }
+        else
+        {	// Ueberlauf verhindern
+            if(idx < sizeof(rx_buf)-1)
+                rx_buf[idx++] = rx_byte; // Wert uebergeben dann idx+1
+        }
+        __HAL_UART_CLEAR_OREFLAG(huart);          // Overrun Flag loeschen
+
+
+        // Naechsten Interrupt starten
+        HAL_UART_Receive_IT(&huart2, &rx_byte, 1);
+    }
+}
 /**
   * @brief System Clock Configuration
   * @retval None

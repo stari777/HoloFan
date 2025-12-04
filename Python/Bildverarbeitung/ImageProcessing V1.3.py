@@ -84,7 +84,7 @@ def send_lines_blocking(lines, port):
     # Daten senden (KEIN read-line mehr → kein Timeout-Lag!)
     for i, l in enumerate(lines):
         ser.write(l.encode() + b'\n')
-        time.sleep(0.0005)
+        time.sleep(0.005)
 
     ser.close()
     return "OK"
