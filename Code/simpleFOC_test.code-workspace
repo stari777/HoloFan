@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "simpleFOC_test",
+			"path": "../../../PlatformIO/Projects/simpleFOC_test"
+		},
+		{
+			"name": "simpleFOC_G431CB",
+			"path": "simpleFOC_G431CB"
+		}
+	],
+	"settings": {}
+}

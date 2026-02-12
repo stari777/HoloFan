@@ -1,0 +1,6 @@
+Word/
+PowerPoint/
+
+# Office temporäre Dateien
+~$*
+*.tmp
