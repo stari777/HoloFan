@@ -66,9 +66,21 @@ uint16_t idx = 0;
 
 float rad_arr[MAX_VALUES];
 float phi_arr[MAX_VALUES];
-uint8_t rgb_arr[MAX_VALUES][3];
+uint8_t rgb_arr[MAX_VALUES][3] = {0};
 
-int count = 0;
+volatile int count = 0;
+
+static uint32_t parse_uint(char **p)
+{
+    uint32_t val = 0; // aktuell gelesener Integer
+    while(**p >= '0' && **p <= '9') // Ziffer
+    {
+        val = val * 10 + (**p - '0'); // ASCII in Zahlen
+        (*p)++; // Zeiger auf naechstes Zeichen
+    }
+    if(**p == ',') (*p)++;  // Komma überspringen
+    return val; // gibt geparste Zahl zurueck
+}
 
 /* USER CODE END 0 */
 
@@ -120,11 +132,12 @@ int main(void)
   {
 	  if(new_line_received)
 	  {
+		  new_line_received = 0;
 		  //HAL_UART_Transmit(&huart2, &rx_byte, 1, HAL_MAX_DELAY); // Echo zum Test
 
 		  char* p = (char*)rx_buf;
-	      float rad_i, phi_i;
-	      unsigned int r_tmp, g_tmp, b_tmp;
+	      //float rad_i, phi_i;
+	      //unsigned int r_tmp, g_tmp, b_tmp;
 /*
 	      rad_i = atof(p);
 	      p = strchr(p, ',');
@@ -147,51 +160,61 @@ int main(void)
 	      p++;
 
 	      b_tmp = atoi(p);
-*/
 
 	      int n = sscanf((char*)rx_buf, "%f,%f,%u,%u,%u",
 	    		  &rad_i, &phi_i, &r_tmp, &g_tmp, &b_tmp);
+	    		  */
 	      int offset;
+
+	      // Integer statt float
+	      uint32_t rad_i = parse_uint(&p);
+	      uint32_t phi_i = parse_uint(&p);
+	      uint32_t r_tmp  = parse_uint(&p);
+	      uint32_t g_tmp  = parse_uint(&p);
+	      uint32_t b_tmp  = parse_uint(&p);
+
 	      //float rad = rad_i / 100.0f;
 	      //float phi = phi_i / 100.0f;
-	      if (n == 5)
+	      if(count < MAX_VALUES)
 	      {
-	    	  // Werte speichern
 	          rgb_arr[count][0] = (uint8_t)r_tmp;
 	          rgb_arr[count][1] = (uint8_t)g_tmp;
-	          rgb_arr[count++][2] = (uint8_t)b_tmp;
+	          rgb_arr[count][2] = (uint8_t)b_tmp;
+	          count++;
+	      }
 
 	          if (count >= MAX_VALUES)
 	          {
 	        	  int TOTAL_FRAMES = MAX_VALUES / FRAME_SIZE;
 
-				  for (int frame = 0; frame < TOTAL_FRAMES; frame++)
-				  {
-					  offset = frame * FRAME_SIZE;
-
-					  for (int i = 0; i < FRAME_SIZE; i++)
+	        	  while(1){
+					  for (int frame = 0; frame < TOTAL_FRAMES; frame++)
 					  {
-						  DigiLed_setColor(i,
-							   rgb_arr[offset + i][0],
-							   rgb_arr[offset + i][1],
-							   rgb_arr[offset + i][2]);
+						  offset = frame * FRAME_SIZE;
+
+						  for (int i = 0; i < FRAME_SIZE; i++)
+						  {
+							  DigiLed_setColor(i,
+								   rgb_arr[offset + i][0],
+								   rgb_arr[offset + i][1],
+								   rgb_arr[offset + i][2]);
+						  }
+						  DigiLed_setAllIllumination(1);
+						  DigiLed_update(1);
+						  HAL_Delay(100);
 					  }
-					  DigiLed_setAllIllumination(1);
-					  DigiLed_update(1);
-					  count = 0;
-					  HAL_Delay(100);
-				  }
-					  offset = 0;
+					  HAL_Delay(500);
+	        	  }
+				  //count = 0;
 			  }
 	      }//
-	      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 1);
-	  }
-	  HAL_Delay(1);
-	  continue;
+	      //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 1);
+	      //HAL_Delay(1);
+	  /*continue;
 
 	  parse_error:
 	      // Ungültige Zeile -> ignorieren
-	      count = count;
+	      count = count;*/
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -199,6 +222,7 @@ int main(void)
 
   /* USER CODE END 3 */
 }
+
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {

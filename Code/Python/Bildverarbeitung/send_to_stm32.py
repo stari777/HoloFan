@@ -38,13 +38,28 @@ else:
     with open(FILE_PATH, "r") as f:
         for line in f:
             line = line.strip()
-            time.sleep(0.005)               # kleine Pause, um STM32 nicht zu überlasten
-            ser.write(line.encode() + b'\n')       # Zeile senden
-            print(line)
+            if not line:
+                continue
 
-            #resp = ser.readline().decode(errors='ignore').strip()
-            #if resp:
-            #   print("STM32:", resp)
+            # Spalte splitten
+            parts = line.split(',')
+            if len(parts) != 5:
+                continue  # ungültige Zeile überspringen
+
+            # rad und phi als Integer *100
+            rad_int = int(float(parts[0]) * 100)
+            phi_int = int(float(parts[1]) * 100)
+
+            r = int(parts[2])
+            g = int(parts[3])
+            b = int(parts[4])
+
+            # Integer-Zeile zusammenbauen
+            send_line = f"{rad_int},{phi_int},{r},{g},{b}\n"
+            ser.write(send_line.encode())
+
+            print(send_line.strip())
+            time.sleep(0.005)
 
 print("Dateiübertragung abgeschlossen.")
 ser.close()
