@@ -1,24 +1,25 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2025 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "spi.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -56,6 +57,32 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+/*
+	      rad_i = atof(p);
+	      p = strchr(p, ',');
+	      if (!p) goto parse_error;
+	      p++;
+
+	      phi_i = atof(p);
+	      p = strchr(p, ',');
+	      if (!p) goto parse_error;
+	      p++;
+
+	      r_tmp = atoi(p);
+	      p = strchr(p, ',');
+	      if (!p) goto parse_error;
+	      p++;
+
+	      g_tmp = atoi(p);
+	      p = strchr(p, ',');
+	      if (!p) goto parse_error;
+	      p++;
+
+	      b_tmp = atoi(p);
+
+	      int n = sscanf((char*)rx_buf, "%f,%f,%u,%u,%u",
+	    		  &rad_i, &phi_i, &r_tmp, &g_tmp, &b_tmp);
+ */
 uint8_t rx_byte;
 uint8_t rx_buf[256];
 volatile uint8_t new_line_received = 0;
@@ -70,16 +97,58 @@ uint8_t rgb_arr[MAX_VALUES][3] = {0};
 
 volatile int count = 0;
 
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if(huart->Instance == USART2)
+    {
+        if(rx_byte == '\n' || rx_byte == '\r')
+        {
+            rx_buf[idx] = 0;          // String beenden
+            //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 0);
+            new_line_received = 1;    // Hauptschleife informieren
+            idx = 0;                  // Reset für neue Zeile
+        }
+        else
+        {	// Ueberlauf verhindern
+            if(idx < sizeof(rx_buf)-1)
+                rx_buf[idx++] = rx_byte; // Wert uebergeben dann idx+1
+        }
+        __HAL_UART_CLEAR_OREFLAG(huart);          // Overrun Flag loeschen
+
+
+        // Naechsten Interrupt starten
+        HAL_UART_Receive_IT(&huart2, &rx_byte, 1);
+    }
+}
+
 static uint32_t parse_uint(char **p)
 {
-    uint32_t val = 0; // aktuell gelesener Integer
-    while(**p >= '0' && **p <= '9') // Ziffer
-    {
-        val = val * 10 + (**p - '0'); // ASCII in Zahlen
-        (*p)++; // Zeiger auf naechstes Zeichen
-    }
-    if(**p == ',') (*p)++;  // Komma überspringen
-    return val; // gibt geparste Zahl zurueck
+	uint32_t val = 0; // aktuell gelesener Integer
+	while(**p >= '0' && **p <= '9') // Ziffer
+	{
+		val = val * 10 + (**p - '0'); // ASCII in Zahlen
+		(*p)++; // Zeiger auf naechstes Zeichen
+	}
+	if(**p == ',') (*p)++;  // Komma ueberspringen
+	return val; // gibt geparste Zahl zurueck
+}
+
+volatile uint32_t ms_counter = 0;
+volatile uint32_t us_counter = 0;
+
+// Timer Interrupt Callback
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if (htim->Instance == TIM2)
+		ms_counter++;
+}
+
+uint32_t millis() {
+	return ms_counter;
+}
+
+uint32_t micros() {
+    return __HAL_TIM_GET_COUNTER(&htim1);
 }
 
 /* USER CODE END 0 */
@@ -115,7 +184,11 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_SPI1_Init();
+  MX_TIM2_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim2);
+  HAL_TIM_Base_Start(&htim1);
   DigiLed_init(&hspi1); // Initialisierung der Library
   HAL_UART_Receive_IT(&huart2, &rx_byte, 1); // Interrupt start
 
@@ -128,89 +201,67 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-	  if(new_line_received)
-	  {
-		  new_line_received = 0;
-		  //HAL_UART_Transmit(&huart2, &rx_byte, 1, HAL_MAX_DELAY); // Echo zum Test
+	while (1)
+	{
 
-		  char* p = (char*)rx_buf;
-	      //float rad_i, phi_i;
-	      //unsigned int r_tmp, g_tmp, b_tmp;
-/*
-	      rad_i = atof(p);
-	      p = strchr(p, ',');
-	      if (!p) goto parse_error;
-	      p++;
+		if(new_line_received)
+		{
+			new_line_received = 0;
+			//HAL_UART_Transmit(&huart2, &rx_byte, 1, HAL_MAX_DELAY); // Echo zum Test
 
-	      phi_i = atof(p);
-	      p = strchr(p, ',');
-	      if (!p) goto parse_error;
-	      p++;
+			char* p = (char*)rx_buf;
+			//float rad_i, phi_i;
 
-	      r_tmp = atoi(p);
-	      p = strchr(p, ',');
-	      if (!p) goto parse_error;
-	      p++;
+			// Integer statt float
+			uint32_t rad_i = parse_uint(&p);
+			uint32_t phi_i = parse_uint(&p);
+			uint32_t r_tmp  = parse_uint(&p);
+			uint32_t g_tmp  = parse_uint(&p);
+			uint32_t b_tmp  = parse_uint(&p);
 
-	      g_tmp = atoi(p);
-	      p = strchr(p, ',');
-	      if (!p) goto parse_error;
-	      p++;
+			//float rad = rad_i / 100.0f;
+			//float phi = phi_i / 100.0f;
+			if(count < MAX_VALUES)
+			{
+				rgb_arr[count][0] = (uint8_t)r_tmp;
+				rgb_arr[count][1] = (uint8_t)g_tmp;
+				rgb_arr[count][2] = (uint8_t)b_tmp;
+				count++;
+			}
 
-	      b_tmp = atoi(p);
+		}
+		if (count >= MAX_VALUES)
+		{
+			if (count >= MAX_VALUES)
+			{
 
-	      int n = sscanf((char*)rx_buf, "%f,%f,%u,%u,%u",
-	    		  &rad_i, &phi_i, &r_tmp, &g_tmp, &b_tmp);
-	    		  */
-	      int offset;
+				int TOTAL_FRAMES = MAX_VALUES / FRAME_SIZE;
+				static int frame = 0;
+				static uint32_t last_time = 0;
+				int offset;
 
-	      // Integer statt float
-	      uint32_t rad_i = parse_uint(&p);
-	      uint32_t phi_i = parse_uint(&p);
-	      uint32_t r_tmp  = parse_uint(&p);
-	      uint32_t g_tmp  = parse_uint(&p);
-	      uint32_t b_tmp  = parse_uint(&p);
+				if (micros() - last_time >= 10000)  // alle 100ms nächster Frame
+				{
+					last_time = micros();
+					offset = frame * FRAME_SIZE;
 
-	      //float rad = rad_i / 100.0f;
-	      //float phi = phi_i / 100.0f;
-	      if(count < MAX_VALUES)
-	      {
-	          rgb_arr[count][0] = (uint8_t)r_tmp;
-	          rgb_arr[count][1] = (uint8_t)g_tmp;
-	          rgb_arr[count][2] = (uint8_t)b_tmp;
-	          count++;
-	      }
+					for (int i = 0; i < FRAME_SIZE; i++)
+					{
+						DigiLed_setColor(i,
+								rgb_arr[offset + i][0],
+								rgb_arr[offset + i][1],
+								rgb_arr[offset + i][2]);
+					}
+					DigiLed_setAllIllumination(1);
+					DigiLed_update(1);
 
-	          if (count >= MAX_VALUES)
-	          {
-	        	  int TOTAL_FRAMES = MAX_VALUES / FRAME_SIZE;
-
-	        	  while(1){
-					  for (int frame = 0; frame < TOTAL_FRAMES; frame++)
-					  {
-						  offset = frame * FRAME_SIZE;
-
-						  for (int i = 0; i < FRAME_SIZE; i++)
-						  {
-							  DigiLed_setColor(i,
-								   rgb_arr[offset + i][0],
-								   rgb_arr[offset + i][1],
-								   rgb_arr[offset + i][2]);
-						  }
-						  DigiLed_setAllIllumination(1);
-						  DigiLed_update(1);
-						  HAL_Delay(100);
-					  }
-					  HAL_Delay(500);
-	        	  }
-				  //count = 0;
-			  }
-	      }//
-	      //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 1);
-	      //HAL_Delay(1);
-	  /*continue;
+					frame++;
+					if (frame >= TOTAL_FRAMES)
+						frame = 0;  // von vorne
+				}
+			}
+		}
+		/*continue;
 
 	  parse_error:
 	      // Ungültige Zeile -> ignorieren
@@ -218,35 +269,11 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+	}
 
   /* USER CODE END 3 */
 }
 
-
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-    if(huart->Instance == USART2)
-    {
-        if(rx_byte == '\n' || rx_byte == '\r')
-        {
-            rx_buf[idx] = 0;          // String beenden
-            //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 0);
-            new_line_received = 1;    // Hauptschleife informieren
-            idx = 0;                  // Reset für neue Zeile
-        }
-        else
-        {	// Ueberlauf verhindern
-            if(idx < sizeof(rx_buf)-1)
-                rx_buf[idx++] = rx_byte; // Wert uebergeben dann idx+1
-        }
-        __HAL_UART_CLEAR_OREFLAG(huart);          // Overrun Flag loeschen
-
-
-        // Naechsten Interrupt starten
-        HAL_UART_Receive_IT(&huart2, &rx_byte, 1);
-    }
-}
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -318,11 +345,11 @@ void SystemClock_Config(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
+	/* User can add his own implementation to report the HAL error return state */
+	__disable_irq();
+	while (1)
+	{
+	}
   /* USER CODE END Error_Handler_Debug */
 }
 #ifdef USE_FULL_ASSERT
@@ -336,7 +363,7 @@ void Error_Handler(void)
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
+	/* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }
