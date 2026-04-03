@@ -130,6 +130,251 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:Conn_01x04_Pin"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x04_Pin"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x04, script generated"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x04_Pin_1_1"
+				(rectangle
+					(start 0.8636 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54) (xy 0.8636 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0.8636 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 0.8636 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -5.08) (xy 0.8636 -5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 180)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -244,113 +489,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Mechanical:MountingHole_Pad"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board yes)
-			(property "Reference" "H"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "MountingHole_Pad"
-				(at 0 4.445 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Mounting Hole with connection"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "mounting hole"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "MountingHole*Pad*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MountingHole_Pad_0_1"
-				(circle
-					(center 0 1.27)
-					(radius 1.27)
-					(stroke
-						(width 1.27)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "MountingHole_Pad_1_1"
-				(pin input line
-					(at 0 -2.54 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1328,7 +1466,7 @@
 	)
 	(text "µC Configuration\n"
 		(exclude_from_sim no)
-		(at 235.966 42.926 0)
+		(at 233.68 42.926 0)
 		(effects
 			(font
 				(size 2.032 2.032)
@@ -1352,7 +1490,7 @@
 	)
 	(text "Level Shifter for LED Inputs\n\n"
 		(exclude_from_sim no)
-		(at 148.59 75.946 0)
+		(at 151.13 96.266 0)
 		(effects
 			(font
 				(size 2.032 2.032)
@@ -1364,67 +1502,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 132.08) (xy 170.18 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0a105f50-7852-4d46-a30d-322b37aab828")
-	)
-	(wire
-		(pts
-			(xy 132.08 132.08) (xy 135.89 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0bd4dada-dbf3-4aaa-afdd-1e9bc034e5cb")
-	)
-	(wire
-		(pts
-			(xy 170.18 125.73) (xy 170.18 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "186f97c5-86ff-4282-88f5-662a627d39f2")
-	)
-	(wire
-		(pts
-			(xy 161.29 125.73) (xy 161.29 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "20ca6243-0740-4320-b1d4-e27f8dffc8b3")
-	)
-	(wire
-		(pts
-			(xy 135.89 124.46) (xy 135.89 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "269e8293-e423-4010-aa3e-b91d50d71935")
-	)
-	(wire
-		(pts
-			(xy 170.18 114.3) (xy 170.18 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "657e5acb-f7d1-4bd4-b764-b5173cc017ed")
-	)
-	(wire
-		(pts
-			(xy 171.45 82.55) (xy 171.45 86.36)
+			(xy 173.99 102.87) (xy 173.99 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1434,7 +1512,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 100.33) (xy 137.16 100.33)
+			(xy 135.89 120.65) (xy 139.7 120.65)
 		)
 		(stroke
 			(width 0)
@@ -1444,7 +1522,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 93.98) (xy 162.56 92.71)
+			(xy 165.1 114.3) (xy 165.1 113.03)
 		)
 		(stroke
 			(width 0)
@@ -1454,7 +1532,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 100.33) (xy 171.45 100.33)
+			(xy 170.18 120.65) (xy 173.99 120.65)
 		)
 		(stroke
 			(width 0)
@@ -1464,7 +1542,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 83.82) (xy 128.27 85.09)
+			(xy 130.81 104.14) (xy 130.81 105.41)
 		)
 		(stroke
 			(width 0)
@@ -1474,17 +1552,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 115.57) (xy 127 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a4dee2cc-10c1-4686-907c-633aebf839bf")
-	)
-	(wire
-		(pts
-			(xy 162.56 83.82) (xy 162.56 86.36)
+			(xy 165.1 104.14) (xy 165.1 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1494,7 +1562,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 92.71) (xy 137.16 100.33)
+			(xy 139.7 113.03) (xy 139.7 120.65)
 		)
 		(stroke
 			(width 0)
@@ -1504,7 +1572,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 82.55) (xy 137.16 85.09)
+			(xy 139.7 102.87) (xy 139.7 105.41)
 		)
 		(stroke
 			(width 0)
@@ -1514,33 +1582,13 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 93.98) (xy 171.45 100.33)
+			(xy 173.99 114.3) (xy 173.99 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "d3edacd7-ebc9-46a9-8d48-eaef6bd26c35")
-	)
-	(wire
-		(pts
-			(xy 161.29 115.57) (xy 161.29 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e3a74a5a-d622-4f2e-a993-9477e98bcd5d")
-	)
-	(wire
-		(pts
-			(xy 135.89 114.3) (xy 135.89 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eac1c519-6942-474e-a701-a8f920ce278c")
 	)
 	(global_label "12V"
 		(shape input)
@@ -1566,7 +1614,7 @@
 	)
 	(global_label "CLK_IN"
 		(shape input)
-		(at 157.48 100.33 180)
+		(at 160.02 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1576,7 +1624,7 @@
 		)
 		(uuid "07abca5b-d252-474a-81e2-b2995f4f7c2b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 148.0238 100.33 0)
+			(at 150.5638 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1608,53 +1656,9 @@
 			)
 		)
 	)
-	(global_label "5V"
-		(shape input)
-		(at 170.18 114.3 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "15d27e4a-a1aa-4009-a5f0-cde1a1188c35")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 170.18 109.0167 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "DI_IN"
-		(shape input)
-		(at 121.92 132.08 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1e561a1d-3e8a-4d63-8a8b-754f8cacdc8b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 114.1571 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "DI_OUT"
 		(shape input)
-		(at 137.16 100.33 0)
+		(at 139.7 120.65 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1664,7 +1668,7 @@
 		)
 		(uuid "2b3b7866-f665-4fb9-9802-69355b6180d7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 146.6162 100.33 0)
+			(at 149.1562 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1698,29 +1702,7 @@
 	)
 	(global_label "3V3"
 		(shape input)
-		(at 127 115.57 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3ad30988-6e3f-42e7-bb8a-5716e3644c51")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 127 109.0772 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "3V3"
-		(shape input)
-		(at 128.27 83.82 90)
+		(at 130.81 104.14 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1730,7 +1712,7 @@
 		)
 		(uuid "444f990b-8d6c-42cf-8d9b-1a7a148d8ab3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 128.27 77.3272 90)
+			(at 130.81 97.6472 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1742,7 +1724,7 @@
 	)
 	(global_label "DI_IN"
 		(shape input)
-		(at 123.19 100.33 180)
+		(at 125.73 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1752,7 +1734,7 @@
 		)
 		(uuid "493f4ed0-6480-4bd6-8156-4ac5bb6d049e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 115.4271 100.33 0)
+			(at 117.9671 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1762,9 +1744,9 @@
 			)
 		)
 	)
-	(global_label "5V"
+	(global_label "DI_OUT"
 		(shape input)
-		(at 135.89 114.3 90)
+		(at 166.37 76.2 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1772,9 +1754,31 @@
 			)
 			(justify left)
 		)
-		(uuid "6f2146a9-ff50-43c5-8688-fae544583195")
+		(uuid "4a191637-228a-4639-9cad-1f39347c1ac5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 135.89 109.0167 90)
+			(at 175.8262 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 166.37 71.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5d40f753-2596-44eb-a8b6-df20c04b5c5d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 173.2257 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1797,6 +1801,50 @@
 		(uuid "6f70c7e4-4a29-422f-a9b6-8f70ea44febd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 237.6329 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 144.78 71.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7cb52245-e3aa-465e-9653-4b4e4e210954")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 151.6357 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DI_OUT"
+		(shape input)
+		(at 144.78 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8bda5abe-c2b0-46f7-9508-29b443d2ad09")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 154.2362 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1850,9 +1898,31 @@
 			)
 		)
 	)
+	(global_label "GND"
+		(shape input)
+		(at 167.64 58.42 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "986eb08d-4253-4318-8d05-f0d89b16fced")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 174.4957 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "CLK_OUT"
 		(shape input)
-		(at 171.45 100.33 0)
+		(at 173.99 120.65 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1862,7 +1932,7 @@
 		)
 		(uuid "a17e0a43-69fd-4d30-ac7c-e92527554214")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 182.5995 100.33 0)
+			(at 185.1395 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1885,50 +1955,6 @@
 		(uuid "a89118bd-97d5-4fa9-b796-c419505dcd6c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 158.9533 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "3V3"
-		(shape input)
-		(at 161.29 115.57 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b1e1afaa-d965-44f6-9c4f-c524ac9e146d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 161.29 109.0772 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "DI_OUT2"
-		(shape input)
-		(at 135.89 132.08 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ba927649-a1c7-47b6-a4ea-dd20fc3c2443")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 146.5557 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1962,7 +1988,7 @@
 	)
 	(global_label "5V"
 		(shape input)
-		(at 171.45 82.55 90)
+		(at 173.99 102.87 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1972,51 +1998,7 @@
 		)
 		(uuid "c5c64e5d-0f68-46cb-b4d0-642dab2fcaaa")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 171.45 77.2667 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "CLK_OUT2"
-		(shape input)
-		(at 170.18 132.08 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ca78dbf1-4e5d-45f1-9254-9c4f249b7b5c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 182.539 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "3V3"
-		(shape input)
-		(at 162.56 83.82 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d44814f9-177e-4733-a8b5-a02a351e8713")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 162.56 77.3272 90)
+			(at 173.99 97.5867 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2028,7 +2010,7 @@
 	)
 	(global_label "5V"
 		(shape input)
-		(at 137.16 82.55 90)
+		(at 144.78 78.74 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2036,9 +2018,9 @@
 			)
 			(justify left)
 		)
-		(uuid "d4c33f6c-6abd-46c3-9399-4ab1b177a8ef")
+		(uuid "c60fdbc0-2888-457e-a721-1d87c334fd79")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 137.16 77.2667 90)
+			(at 150.0633 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2048,24 +2030,68 @@
 			)
 		)
 	)
-	(global_label "CLK_IN"
+	(global_label "CLK_OUT"
 		(shape input)
-		(at 156.21 132.08 180)
+		(at 144.78 73.66 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "dd0554d7-0b9c-4086-9708-4e9c58494bd7")
+		(uuid "caf86f8e-7742-4153-b490-708af9ea44ff")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 146.7538 132.08 0)
+			(at 155.9295 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 165.1 104.14 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d44814f9-177e-4733-a8b5-a02a351e8713")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 165.1 97.6472 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "5V"
+		(shape input)
+		(at 139.7 102.87 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d4c33f6c-6abd-46c3-9399-4ab1b177a8ef")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 139.7 97.5867 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -2114,6 +2140,28 @@
 			)
 		)
 	)
+	(global_label "CLK_OUT"
+		(shape input)
+		(at 166.37 73.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f33c5ef7-92bb-440a-8fa6-3ce943f0a6c0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 177.5195 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "CLK_IN"
 		(shape input)
 		(at 199.39 77.47 180)
@@ -2132,6 +2180,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "5V"
+		(shape input)
+		(at 166.37 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f9c50246-8a1a-489d-8b94-3999ed2ccf06")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 171.6533 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -2202,54 +2272,51 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:2N3904")
-		(at 161.29 129.54 270)
+		(lib_id "Connector:Conn_01x04_Pin")
+		(at 139.7 73.66 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "09b4422c-d897-4262-bc9f-11c0a777d700")
-		(property "Reference" "Q4"
-			(at 161.29 135.89 90)
+		(uuid "320d71d4-db2a-4375-81eb-605091ac4486")
+		(property "Reference" "LED_1"
+			(at 140.335 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "2N3904"
-			(at 161.29 138.43 90)
+		(property "Value" "Conn_01x04_Pin"
+			(at 140.335 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 159.385 134.62 0)
+		(property "Footprint" "APA102:APA102_Pads"
+			(at 139.7 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
-					(italic yes)
 				)
-				(justify left)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 161.29 129.54 0)
+		(property "Datasheet" "~"
+			(at 139.7 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 				(hide yes)
 			)
 		)
-		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 161.29 129.54 0)
+		(property "Description" "Generic connector, single row, 01x04, script generated"
+			(at 139.7 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2258,589 +2325,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "31c033fb-84fe-4640-87eb-bc61c42bb22c")
+			(uuid "8168e83f-d14f-4cf0-863c-9ce2151d051b")
+		)
+		(pin "2"
+			(uuid "f2c54a54-1de7-4726-b04d-7fbe2a8917e5")
 		)
 		(pin "3"
-			(uuid "158512ed-30ca-4185-b015-4d0738a1b127")
+			(uuid "46b44573-1cc1-4975-b621-70ef616d92dd")
 		)
-		(pin "2"
-			(uuid "4efceb8f-5b26-44e7-a9cd-26250831fbaf")
-		)
-		(instances
-			(project "Schaltplan HoloFan"
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "Q4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 54.61 40.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0af1bf98-f5fa-446d-ac74-4a58bac505ff")
-		(property "Reference" "H4"
-			(at 57.15 38.0999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 57.15 40.6399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 54.61 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 54.61 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 54.61 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "223b918d-95e5-4738-9252-c435e72dedb2")
+		(pin "4"
+			(uuid "605449b2-1d8f-483b-943e-6da91f1085e4")
 		)
 		(instances
 			(project ""
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "H4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 162.56 59.69 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3bb16732-6322-485e-af30-b7b7535f8466")
-		(property "Reference" "3V3_GND1"
-			(at 165.1 57.1499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 165.1 59.6899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 162.56 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 162.56 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 162.56 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "440b0468-d435-4dfa-8552-b5f6c9dd728e")
-		)
-		(instances
-			(project ""
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "3V3_GND1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 74.93 40.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4ce2afb2-753f-40fa-930a-f4947773a184")
-		(property "Reference" "H1"
-			(at 77.47 38.0999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 77.47 40.6399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 74.93 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 74.93 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 74.93 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "223b918d-95e5-4738-9252-c435e72dedb3")
-		)
-		(instances
-			(project ""
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "H1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 170.18 121.92 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "592d763d-9690-48b8-bcfd-214ddc731396")
-		(property "Reference" "R8"
-			(at 172.72 120.6499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "6.8k"
-			(at 172.72 123.1899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 168.402 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 170.18 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 170.18 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3e8ee8a3-ae96-4bc7-91b8-7013c7af09cb")
-		)
-		(pin "2"
-			(uuid "b180d540-35e2-417b-b8a8-d2871570abc2")
-		)
-		(instances
-			(project "Schaltplan HoloFan"
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "R8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 135.89 120.65 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5d6fdb43-14bf-4c64-9bdb-8b92be246579")
-		(property "Reference" "R6"
-			(at 138.43 119.3799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "6.8k"
-			(at 138.43 121.9199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 134.112 120.65 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 135.89 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 135.89 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Field5" ""
-			(at 135.89 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Field6" ""
-			(at 135.89 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "f7c089da-fe5a-4794-bd1e-2c1a24f8c9f5")
-		)
-		(pin "1"
-			(uuid "790c4eb1-49bc-45fb-924e-4d3d5c221f27")
-		)
-		(instances
-			(project "Schaltplan HoloFan"
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "R6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 67.31 40.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5f9d7430-4e06-48da-8d6a-a928d413db45")
-		(property "Reference" "H2"
-			(at 69.85 38.0999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 69.85 40.6399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 67.31 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 67.31 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 67.31 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "223b918d-95e5-4738-9252-c435e72dedb4")
-		)
-		(instances
-			(project ""
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "H2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 127 120.65 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "670cb4da-d29b-4b76-8717-de156c1c6b71")
-		(property "Reference" "R5"
-			(at 129.54 119.3799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2.2k"
-			(at 129.54 121.9199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 125.222 120.65 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 127 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 127 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "2e1874cc-e152-4793-b1e4-99a6782c3d12")
-		)
-		(pin "1"
-			(uuid "43062f15-8f9c-46a2-8077-80718a4707ff")
-		)
-		(instances
-			(project "Schaltplan HoloFan"
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_BJT:2N3904")
-		(at 127 129.54 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "67479292-d7fa-4ced-ae7b-90d39397c438")
-		(property "Reference" "Q3"
-			(at 127 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2N3904"
-			(at 127 138.43 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 125.095 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 127 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 127 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "74aed6aa-0e4f-4b76-a28b-42beafef2c13")
-		)
-		(pin "2"
-			(uuid "43b743c5-c0e6-4abd-8a41-03060b572b59")
-		)
-		(pin "1"
-			(uuid "d64fbdff-19b2-4647-8d48-863c67bc94c9")
-		)
-		(instances
-			(project "Schaltplan HoloFan"
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "Q3")
+					(reference "LED_1")
 					(unit 1)
 				)
 			)
@@ -2978,7 +2477,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 137.16 88.9 0)
+		(at 139.7 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2987,7 +2486,7 @@
 		(fields_autoplaced yes)
 		(uuid "79848632-1a39-4735-a48d-771d6466ae40")
 		(property "Reference" "R2"
-			(at 139.7 87.6299 0)
+			(at 142.24 107.9499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2996,7 +2495,7 @@
 			)
 		)
 		(property "Value" "6.8k"
-			(at 139.7 90.1699 0)
+			(at 142.24 110.4899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3004,8 +2503,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 135.382 88.9 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 137.922 109.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3014,7 +2513,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 137.16 88.9 0)
+			(at 139.7 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3023,7 +2522,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 137.16 88.9 0)
+			(at 139.7 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3032,7 +2531,7 @@
 			)
 		)
 		(property "Field5" ""
-			(at 137.16 88.9 0)
+			(at 139.7 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3041,7 +2540,7 @@
 			)
 		)
 		(property "Field6" ""
-			(at 137.16 88.9 0)
+			(at 139.7 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3066,7 +2565,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 162.56 90.17 0)
+		(at 165.1 110.49 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3074,7 +2573,7 @@
 		(dnp no)
 		(uuid "7e2454df-79ba-4be6-8476-b56a210e1d50")
 		(property "Reference" "R3"
-			(at 165.1 88.8999 0)
+			(at 167.64 109.2199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3083,7 +2582,7 @@
 			)
 		)
 		(property "Value" "2.2k"
-			(at 165.1 91.4399 0)
+			(at 167.64 111.7599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3091,8 +2590,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 160.782 90.17 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 163.322 110.49 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3101,7 +2600,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 162.56 90.17 0)
+			(at 165.1 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3110,7 +2609,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 162.56 90.17 0)
+			(at 165.1 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3128,142 +2627,6 @@
 			(project ""
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
 					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 149.86 64.77 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "839bfba4-4aaa-47f4-8b5d-eb24e13f48e6")
-		(property "Reference" "3V3_OUT1"
-			(at 152.4 62.2299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 152.4 64.7699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 149.86 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 149.86 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 149.86 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "440b0468-d435-4dfa-8552-b5f6c9dd728f")
-		)
-		(instances
-			(project ""
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "3V3_OUT1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 153.67 67.31 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "85a5590f-863b-4c2f-8359-630ef9e0f56c")
-		(property "Reference" "5V_OUT1"
-			(at 156.21 64.7699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 156.21 67.3099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 153.67 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 153.67 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 153.67 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "440b0468-d435-4dfa-8552-b5f6c9dd7290")
-		)
-		(instances
-			(project ""
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "5V_OUT1")
 					(unit 1)
 				)
 			)
@@ -3543,36 +2906,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 170.18 64.77 0)
+		(lib_id "Connector:Conn_01x01_Pin")
+		(at 162.56 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "986265ce-abb9-42ab-bfbb-9d0a02956bcd")
-		(property "Reference" "12V_GND2"
-			(at 172.72 63.4999 0)
+		(uuid "a412325e-2457-47d6-a7dc-245115af3faf")
+		(property "Reference" "5V_GND3"
+			(at 165.354 55.626 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "MountingHole_Pad"
-			(at 172.72 64.7699 0)
+		(property "Value" "Conn_01x01_Pin"
+			(at 163.195 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 				(hide yes)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 170.18 64.77 0)
+		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
+			(at 162.56 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3581,7 +2941,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 170.18 64.77 0)
+			(at 162.56 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3589,8 +2949,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole with connection"
-			(at 170.18 64.77 0)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 162.56 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3599,214 +2959,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "4d56d23d-65cd-4633-b31d-bca1231656f5")
+			(uuid "23f50e01-da55-444b-bae9-3119b1f1ccde")
 		)
 		(instances
 			(project "Schaltplan HoloFan"
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "12V_GND2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 59.69 40.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9a183ea2-a5ac-4bba-b7a6-2d8a2addbdfa")
-		(property "Reference" "H3"
-			(at 62.23 38.0999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 62.23 40.6399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 59.69 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 59.69 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 59.69 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "223b918d-95e5-4738-9252-c435e72dedb5")
-		)
-		(instances
-			(project ""
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "H3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 139.7 62.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "9e701a57-a33a-488c-8c64-cf33d838e74a")
-		(property "Reference" "12V_IN1"
-			(at 142.24 59.6899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 142.24 62.2299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 139.7 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 139.7 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 139.7 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "440b0468-d435-4dfa-8552-b5f6c9dd7291")
-		)
-		(instances
-			(project ""
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "12V_IN1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 166.37 62.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9e7e15b0-35d8-4a25-801b-51552a55ad2d")
-		(property "Reference" "5V_GND1"
-			(at 168.91 59.6899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 168.91 62.2299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 166.37 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 166.37 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 166.37 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "440b0468-d435-4dfa-8552-b5f6c9dd7292")
-		)
-		(instances
-			(project ""
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "5V_GND1")
+					(reference "5V_GND3")
 					(unit 1)
 				)
 			)
@@ -3814,7 +2972,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_BJT:2N3904")
-		(at 162.56 97.79 270)
+		(at 165.1 118.11 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3823,7 +2981,7 @@
 		(fields_autoplaced yes)
 		(uuid "ba87cbdc-dc05-41d2-8c55-0fb5c329049a")
 		(property "Reference" "Q2"
-			(at 162.56 104.14 90)
+			(at 165.1 124.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3831,15 +2989,15 @@
 			)
 		)
 		(property "Value" "2N3904"
-			(at 162.56 106.68 90)
+			(at 165.1 127 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 160.655 102.87 0)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23"
+			(at 163.195 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3850,7 +3008,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 162.56 97.79 0)
+			(at 165.1 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3860,7 +3018,7 @@
 			)
 		)
 		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 162.56 97.79 0)
+			(at 165.1 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3952,36 +3110,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 135.89 59.69 0)
+		(lib_id "Connector:Conn_01x04_Pin")
+		(at 161.29 73.66 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "cdd6ccdd-3b33-4a7f-a967-053e3c78a029")
-		(property "Reference" "5V_IN1"
-			(at 138.43 57.1499 0)
+		(uuid "bf1303be-7b3a-442a-b700-ce90209f0ca4")
+		(property "Reference" "LED_2"
+			(at 161.925 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "MountingHole_Pad"
-			(at 138.43 59.6899 0)
+		(property "Value" "Conn_01x04_Pin"
+			(at 161.925 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2"
-			(at 135.89 59.69 0)
+		(property "Footprint" "APA102:APA102_Pads"
+			(at 161.29 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3990,7 +3145,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 135.89 59.69 0)
+			(at 161.29 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3998,8 +3153,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole with connection"
-			(at 135.89 59.69 0)
+		(property "Description" "Generic connector, single row, 01x04, script generated"
+			(at 161.29 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4008,12 +3163,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "440b0468-d435-4dfa-8552-b5f6c9dd7293")
+			(uuid "df646f96-db66-419a-899c-9a9299263eee")
+		)
+		(pin "2"
+			(uuid "c8d7979f-4fcc-4785-a831-86fc3dc0bf15")
+		)
+		(pin "3"
+			(uuid "7433838c-8629-430f-88bb-5c711cfdc90e")
+		)
+		(pin "4"
+			(uuid "8be01dd1-d5ab-4ec3-a383-9fc628ec6190")
 		)
 		(instances
-			(project ""
+			(project "Schaltplan HoloFan"
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "5V_IN1")
+					(reference "LED_2")
 					(unit 1)
 				)
 			)
@@ -4021,7 +3185,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 128.27 88.9 0)
+		(at 130.81 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4030,7 +3194,7 @@
 		(fields_autoplaced yes)
 		(uuid "ce298a6c-0970-4253-b826-b0593bec6cc5")
 		(property "Reference" "R1"
-			(at 130.81 87.6299 0)
+			(at 133.35 107.9499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4039,7 +3203,7 @@
 			)
 		)
 		(property "Value" "2.2k"
-			(at 130.81 90.1699 0)
+			(at 133.35 110.4899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4047,8 +3211,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 126.492 88.9 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 129.032 109.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4057,7 +3221,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 128.27 88.9 0)
+			(at 130.81 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4066,7 +3230,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 128.27 88.9 0)
+			(at 130.81 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4084,75 +3248,6 @@
 			(project ""
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
 					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 161.29 121.92 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d6fa3b62-ada0-4c41-a880-cbba72858aa7")
-		(property "Reference" "R7"
-			(at 163.83 120.6499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2.2k"
-			(at 163.83 123.1899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 159.512 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 161.29 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 161.29 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4339c948-18da-4c7e-9cf7-ea8b162443cf")
-		)
-		(pin "2"
-			(uuid "7309d97f-e735-4fa2-9de8-7b217724f559")
-		)
-		(instances
-			(project "Schaltplan HoloFan"
-				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -4433,7 +3528,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_BJT:2N3904")
-		(at 128.27 97.79 270)
+		(at 130.81 118.11 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4442,7 +3537,7 @@
 		(fields_autoplaced yes)
 		(uuid "e912b3b5-6650-4b84-bc66-4785297ac16c")
 		(property "Reference" "Q1"
-			(at 128.27 104.14 90)
+			(at 130.81 124.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4450,15 +3545,15 @@
 			)
 		)
 		(property "Value" "2N3904"
-			(at 128.27 106.68 90)
+			(at 130.81 127 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
-			(at 126.365 102.87 0)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23"
+			(at 128.905 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4469,7 +3564,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF"
-			(at 128.27 97.79 0)
+			(at 130.81 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4479,7 +3574,7 @@
 			)
 		)
 		(property "Description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92"
-			(at 128.27 97.79 0)
+			(at 130.81 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4637,7 +3732,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 171.45 90.17 0)
+		(at 173.99 110.49 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4646,7 +3741,7 @@
 		(fields_autoplaced yes)
 		(uuid "f7dd27d7-2813-4ecb-9ff3-8181bc1e4839")
 		(property "Reference" "R4"
-			(at 173.99 88.8999 0)
+			(at 176.53 109.2199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4655,7 +3750,7 @@
 			)
 		)
 		(property "Value" "6.8k"
-			(at 173.99 91.4399 0)
+			(at 176.53 111.7599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4663,8 +3758,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 169.672 90.17 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 172.212 110.49 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4673,7 +3768,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 171.45 90.17 0)
+			(at 173.99 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4682,7 +3777,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 171.45 90.17 0)
+			(at 173.99 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)

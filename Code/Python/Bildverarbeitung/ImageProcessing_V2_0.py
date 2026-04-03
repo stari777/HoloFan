@@ -15,7 +15,7 @@ import asyncio
 SIZE_XY = 30
 BAUD = 115200
 TIMEOUT = 1
-MAX_WAIT = 60
+MAX_WAIT = 1
 LOG_WIDTH = 280
 
 current_image = None
@@ -365,11 +365,12 @@ def send_lines_blocking(lines, port):
             break
 
     if not ready:
-        try:
-            ser.close()
-        except Exception:
-            pass
-        return "ERROR: No READY from MCU."
+        ready = True
+        #try:
+         #   ser.close()
+        #except Exception:
+         #   pass
+        #return "ERROR: No READY from MCU."
 
     log("READY received. Starting transmission...")
     time.sleep(0.1)

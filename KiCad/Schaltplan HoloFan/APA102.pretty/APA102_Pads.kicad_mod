@@ -1,0 +1,106 @@
+(footprint "APA102_Pads"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "APA102_Pad"
+		(at 0 -1.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "5a965d11-c9b7-4e48-a17f-453048a0eee6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "APA102_Pads"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "635919fa-bd82-4062-aced-1e794aac8dd0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "568dd28e-d3b0-4de1-88a9-ad9bf28b710b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "779cd4ed-c2ce-46d6-8bf0-789d69400672")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "5ee2e0c5-e09f-4150-a8cd-6cfab1f3cd0a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole roundrect
+		(at 0.012086 0.263646)
+		(size 2.8 1.8)
+		(drill 1.4)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(roundrect_rratio 0.15)
+		(uuid "c1c9a8eb-174f-4146-9bbb-4de49e2981d1")
+	)
+	(pad "2" thru_hole roundrect
+		(at -0.003431 3.087882)
+		(size 2.8 1.8)
+		(drill 1.4)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(roundrect_rratio 0.15)
+		(uuid "e20790b3-5a37-411c-ab59-e665c17c86f1")
+	)
+	(pad "3" thru_hole roundrect
+		(at -0.003431 5.912117)
+		(size 2.8 1.8)
+		(drill 1.4)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(roundrect_rratio 0.15)
+		(uuid "95deb2b5-c7ea-451e-881a-a4659785ee73")
+	)
+	(pad "4" thru_hole roundrect
+		(at 0.027604 8.720836)
+		(size 2.8 1.8)
+		(drill 1.4)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(roundrect_rratio 0.15)
+		(uuid "733b323b-87b7-4d24-8ce7-8db3c7bd9461")
+	)
+	(embedded_fonts no)
+)

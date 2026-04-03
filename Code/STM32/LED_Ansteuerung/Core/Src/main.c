@@ -83,6 +83,10 @@ void SystemClock_Config(void);
 	      int n = sscanf((char*)rx_buf, "%f,%f,%u,%u,%u",
 	    		  &rad_i, &phi_i, &r_tmp, &g_tmp, &b_tmp);
  */
+
+/* --------------------------------------------------------------------------
+ * UART-Empfang & Datenpuffer
+ * -------------------------------------------------------------------------- */
 uint8_t rx_byte;
 uint8_t rx_buf[256];
 volatile uint8_t new_line_received = 0;
@@ -96,6 +100,15 @@ float phi_arr[MAX_VALUES];
 uint8_t rgb_arr[MAX_VALUES][3] = {0};
 
 volatile int count = 0;
+
+/* --------------------------------------------------------------------------
+ * POV-Konfiguration
+ * -------------------------------------------------------------------------- */
+#define POV_SLICES          128        // Winkelaufloesung: 360° / 128 = 2,8125°
+#define ROTATION_PERIOD_US  20000UL    // 3000 RPM → 20 ms pro Umdrehung
+
+uint8_t pov_frame[POV_SLICES][FRAME_SIZE][3];
+static  uint8_t pov_built = 0;
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
@@ -139,16 +152,52 @@ volatile uint32_t us_counter = 0;
 // Timer Interrupt Callback
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if (htim->Instance == TIM2)
-		ms_counter++;
+	if (htim->Instance == TIM2) ms_counter++;
 }
 
-uint32_t millis() {
-	return ms_counter;
-}
+uint32_t millis() { return ms_counter; }
 
-uint32_t micros() {
-    return __HAL_TIM_GET_COUNTER(&htim1);
+uint32_t micros() { return __HAL_TIM_GET_COUNTER(&htim1); }
+
+static void build_pov_buffer(void)
+{
+    /* Puffer mit Schwarz initialisieren */
+    for (int s = 0; s < POV_SLICES; s++)
+        for (int l = 0; l < FRAME_SIZE; l++)
+            pov_frame[s][l][0] = pov_frame[s][l][1] = pov_frame[s][l][2] = 0;
+
+    /* Maximalen Radius für Normierung bestimmen */
+    float max_rad = 0.0f;
+    for (int j = 0; j < count; j++)
+        if (rad_arr[j] > max_rad) max_rad = rad_arr[j];
+    if (max_rad == 0.0f) max_rad = 1.0f;
+
+    /* Jeden Punkt in pov_frame eintragen */
+    for (int j = 0; j < count; j++)
+    {
+        /* Winkel → Slice-Index */
+        float norm_phi = phi_arr[j];
+        if (norm_phi < 0.0f)    norm_phi += 360.0f;
+        if (norm_phi >= 360.0f) norm_phi -= 360.0f;
+
+        int slice = (int)(norm_phi / 360.0f * (float)POV_SLICES);
+        if (slice < 0)           slice = 0;
+        if (slice >= POV_SLICES) slice = POV_SLICES - 1;
+
+        /* Radius → LED-Index (0 = Achse, 29 = außen) */
+        int led = (int)(rad_arr[j] / max_rad * (float)(FRAME_SIZE - 1) + 0.5f);
+        if (led < 0)           led = 0;
+        if (led >= FRAME_SIZE) led = FRAME_SIZE - 1;
+
+        /* Hellerer Punkt gewinnt bei Überschneidung */
+        if ((rgb_arr[j][0] + rgb_arr[j][1] + rgb_arr[j][2])
+          > (pov_frame[slice][led][0] + pov_frame[slice][led][1] + pov_frame[slice][led][2]))
+        {
+            pov_frame[slice][led][0] = rgb_arr[j][0];
+            pov_frame[slice][led][1] = rgb_arr[j][1];
+            pov_frame[slice][led][2] = rgb_arr[j][2];
+        }
+    }
 }
 
 /* USER CODE END 0 */
@@ -219,22 +268,22 @@ int main(void)
 			uint32_t g_tmp  = parse_uint(&p);
 			uint32_t b_tmp  = parse_uint(&p);
 
-			//float rad = rad_i / 100.0f;
-			//float phi = phi_i / 100.0f;
 			if(count < MAX_VALUES)
 			{
 				rgb_arr[count][0] = (uint8_t)r_tmp;
 				rgb_arr[count][1] = (uint8_t)g_tmp;
 				rgb_arr[count][2] = (uint8_t)b_tmp;
+				rad_arr[count] = rad_i / 100.0f;
+				phi_arr[count] = phi_i / 100.0f;
 				count++;
 			}
 
 		}
+		/*
+		 --- LED-Ansteuerung ohne Motor ---
+
 		if (count >= MAX_VALUES)
 		{
-			if (count >= MAX_VALUES)
-			{
-
 				int TOTAL_FRAMES = MAX_VALUES / FRAME_SIZE;
 				static int frame = 0;
 				static uint32_t last_time = 0;
@@ -260,7 +309,36 @@ int main(void)
 						frame = 0;  // von vorne
 				}
 			}
-		}
+		}*/
+        if (count >= MAX_VALUES)
+        {
+            build_pov_buffer();
+            pov_built = 1;
+        }
+
+        if (pov_built)
+        {
+            uint32_t pos_us = micros() % ROTATION_PERIOD_US;
+
+            int slice = (int)((float)pos_us
+                              / (float)ROTATION_PERIOD_US
+                              * (float)POV_SLICES);
+
+            if (slice < 0)           slice = 0;
+            if (slice >= POV_SLICES) slice = POV_SLICES - 1;
+
+            for (int i = 0; i < FRAME_SIZE; i++)
+            {
+                DigiLed_setColor(i,
+                                 pov_frame[slice][i][0],
+                                 pov_frame[slice][i][1],
+                                 pov_frame[slice][i][2]);
+            }
+
+            DigiLed_setAllIllumination(1);
+            DigiLed_update(1);
+        }
+
 		/*continue;
 
 	  parse_error:
