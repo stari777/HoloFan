@@ -1746,7 +1746,7 @@
 	)
 	(global_label "DI_OUT"
 		(shape input)
-		(at 166.37 76.2 0)
+		(at 161.29 68.58 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1756,7 +1756,7 @@
 		)
 		(uuid "4a191637-228a-4639-9cad-1f39347c1ac5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 175.8262 76.2 0)
+			(at 170.7462 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1768,7 +1768,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 166.37 71.12 0)
+		(at 161.29 63.5 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1778,7 +1778,7 @@
 		)
 		(uuid "5d40f753-2596-44eb-a8b6-df20c04b5c5d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 173.2257 71.12 0)
+			(at 168.1457 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1812,7 +1812,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 144.78 71.12 0)
+		(at 139.7 63.5 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1822,7 +1822,7 @@
 		)
 		(uuid "7cb52245-e3aa-465e-9653-4b4e4e210954")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 151.6357 71.12 0)
+			(at 146.5557 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1834,7 +1834,7 @@
 	)
 	(global_label "DI_OUT"
 		(shape input)
-		(at 144.78 76.2 0)
+		(at 139.7 68.58 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1844,7 +1844,7 @@
 		)
 		(uuid "8bda5abe-c2b0-46f7-9508-29b443d2ad09")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 154.2362 76.2 0)
+			(at 149.1562 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2010,7 +2010,7 @@
 	)
 	(global_label "5V"
 		(shape input)
-		(at 144.78 78.74 0)
+		(at 139.7 71.12 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2020,7 +2020,7 @@
 		)
 		(uuid "c60fdbc0-2888-457e-a721-1d87c334fd79")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 150.0633 78.74 0)
+			(at 144.9833 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2032,7 +2032,7 @@
 	)
 	(global_label "CLK_OUT"
 		(shape input)
-		(at 144.78 73.66 0)
+		(at 139.7 66.04 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2042,7 +2042,7 @@
 		)
 		(uuid "caf86f8e-7742-4153-b490-708af9ea44ff")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 155.9295 73.66 0)
+			(at 150.8495 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2142,7 +2142,7 @@
 	)
 	(global_label "CLK_OUT"
 		(shape input)
-		(at 166.37 73.66 0)
+		(at 161.29 66.04 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2152,7 +2152,7 @@
 		)
 		(uuid "f33c5ef7-92bb-440a-8fa6-3ce943f0a6c0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 177.5195 73.66 0)
+			(at 172.4395 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2186,7 +2186,7 @@
 	)
 	(global_label "5V"
 		(shape input)
-		(at 166.37 78.74 0)
+		(at 161.29 71.12 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2196,7 +2196,7 @@
 		)
 		(uuid "f9c50246-8a1a-489d-8b94-3999ed2ccf06")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 171.6533 78.74 0)
+			(at 166.5733 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2215,7 +2215,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "08ae320c-f6a8-4bea-a4b2-05409a5fa2df")
-		(property "Reference" "3V3_GND2"
+		(property "Reference" "3V3_GND1"
 			(at 165.608 50.292 0)
 			(effects
 				(font
@@ -2265,7 +2265,7 @@
 		(instances
 			(project ""
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "3V3_GND2")
+					(reference "3V3_GND1")
 					(unit 1)
 				)
 			)
@@ -2273,7 +2273,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Pin")
-		(at 139.7 73.66 0)
+		(at 134.62 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2282,7 +2282,7 @@
 		(fields_autoplaced yes)
 		(uuid "320d71d4-db2a-4375-81eb-605091ac4486")
 		(property "Reference" "LED_1"
-			(at 140.335 66.04 0)
+			(at 135.255 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2290,15 +2290,16 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 140.335 68.58 0)
+			(at 135.255 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "APA102:APA102_Pads"
-			(at 139.7 73.66 0)
+			(at 134.62 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2307,7 +2308,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 139.7 73.66 0)
+			(at 134.62 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2316,7 +2317,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated"
-			(at 139.7 73.66 0)
+			(at 134.62 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2354,7 +2355,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "67f7e258-41f1-4ff7-a311-9912f0a12a72")
-		(property "Reference" "5V_IN2"
+		(property "Reference" "5V_IN1"
 			(at 137.414 45.212 0)
 			(effects
 				(font
@@ -2404,7 +2405,7 @@
 		(instances
 			(project ""
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "5V_IN2")
+					(reference "5V_IN1")
 					(unit 1)
 				)
 			)
@@ -2419,7 +2420,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "761a9a39-2bca-4eee-9c12-a32887481923")
-		(property "Reference" "5V_OUT2"
+		(property "Reference" "5V_OUT1"
 			(at 151.13 40.132 0)
 			(effects
 				(font
@@ -2469,7 +2470,7 @@
 		(instances
 			(project ""
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "5V_OUT2")
+					(reference "5V_OUT1")
 					(unit 1)
 				)
 			)
@@ -2914,7 +2915,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a412325e-2457-47d6-a7dc-245115af3faf")
-		(property "Reference" "5V_GND3"
+		(property "Reference" "5V_GND2"
 			(at 165.354 55.626 0)
 			(effects
 				(font
@@ -2964,7 +2965,7 @@
 		(instances
 			(project "Schaltplan HoloFan"
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "5V_GND3")
+					(reference "5V_GND2")
 					(unit 1)
 				)
 			)
@@ -3053,7 +3054,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bc646ee3-2fff-4bd9-9aa6-e44fdb48640a")
-		(property "Reference" "5V_GND2"
+		(property "Reference" "5V_GND1"
 			(at 165.354 45.466 0)
 			(effects
 				(font
@@ -3103,7 +3104,7 @@
 		(instances
 			(project ""
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "5V_GND2")
+					(reference "5V_GND1")
 					(unit 1)
 				)
 			)
@@ -3111,7 +3112,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Pin")
-		(at 161.29 73.66 0)
+		(at 156.21 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3120,7 +3121,7 @@
 		(fields_autoplaced yes)
 		(uuid "bf1303be-7b3a-442a-b700-ce90209f0ca4")
 		(property "Reference" "LED_2"
-			(at 161.925 66.04 0)
+			(at 156.845 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3128,15 +3129,16 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 161.925 68.58 0)
+			(at 156.845 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "APA102:APA102_Pads"
-			(at 161.29 73.66 0)
+			(at 156.21 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3145,7 +3147,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 161.29 73.66 0)
+			(at 156.21 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3154,7 +3156,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated"
-			(at 161.29 73.66 0)
+			(at 156.21 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3609,7 +3611,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f31d77a9-0be2-43b4-9207-4cce8a183eee")
-		(property "Reference" "12V_IN2"
+		(property "Reference" "12V_IN1"
 			(at 137.414 40.132 0)
 			(effects
 				(font
@@ -3659,7 +3661,7 @@
 		(instances
 			(project ""
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "12V_IN2")
+					(reference "12V_IN1")
 					(unit 1)
 				)
 			)
@@ -3809,7 +3811,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fbdf79bb-2891-4716-ab5e-4207db69d044")
-		(property "Reference" "3V3_OUT2"
+		(property "Reference" "3V3_OUT1"
 			(at 151.384 45.466 0)
 			(effects
 				(font
@@ -3859,7 +3861,7 @@
 		(instances
 			(project ""
 				(path "/3660609d-0404-43eb-9452-5e5c87515aaf"
-					(reference "3V3_OUT2")
+					(reference "3V3_OUT1")
 					(unit 1)
 				)
 			)
